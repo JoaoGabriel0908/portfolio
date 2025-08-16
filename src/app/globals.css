@@ -25,10 +25,13 @@ body {
 }
 
 .section-height {
-  height: calc(100vh - 64px);
+  min-height: calc(100vh - 50px);
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.text-primary {
+  color: #28A745;
 }

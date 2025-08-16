@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Rachi",
+            "description": "Site institucional responsivo para a empresa Rachi.",
+            "image": "/assets/images/rachi.png",
+            "link": "https://rachi-responsivo.vercel.app",
+            "technologies": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+            "id": 2,
+            "name": "Xbox Series X",
+            "description": "Site com informações sobre o Xbox series X",
+            "image": "/assets/images/xbox.png",
+            "link": "https://projeto-xbox-psi.vercel.app",
+            "technologies": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+            "id": 3,
+            "name": "Spider-Man",
+            "description": "Site com informações sobre o Homem-Aranha Miles Morales",
+            "image": "/assets/images/spiderman.png",
+            "link": "https://spider-man-puce-five.vercel.app",
+            "technologies": ["HTML", "CSS", "JavaScript"]
+        }
+    ]
+}
