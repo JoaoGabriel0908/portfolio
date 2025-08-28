@@ -1,5 +1,5 @@
 "use client";
-import { Geist, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import styles from "./Header.module.css";
 import Link from "next/link";
 

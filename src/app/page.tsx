@@ -14,6 +14,7 @@ import CardService from "@/components/card-service/CardService";
 import CardProject from "@/components/card-project/CardProject";
 import CardGithub from "@/components/card-github/CardGithub";
 import CardContact from "@/components/card-contact/CardContact";
+import { Project } from "@/model/typeProject";
 
 const poppinsNormal = Poppins({
   subsets: ['latin'],
@@ -23,11 +24,11 @@ const poppinsNormal = Poppins({
 
 export default function Home() {
 
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     const resJson = fetch('/assets/json/projects.json').then(res => res.json())
-    const data = resJson.then(res => setProjects(res.projects));
+    resJson.then(res => setProjects(res.projects));
   })
 
   return (
@@ -154,11 +155,7 @@ export default function Home() {
               projects.map((project, index) => (
                 <CardProject
                   key={index}
-                  title={project.name}
-                  desc={project.description}
-                  image={project.image}
-                  link={project.link}
-                  tags={project.technologies} />
+                  project={project}/>
               ))
             }
           </div>
@@ -185,8 +182,8 @@ export default function Home() {
             <span className="text-black font-semibold mb-4">Informações de Contato</span>
 
             <div className="flex flex-col text-black space-y-5">
-              <CardContact title="Email" desc="joao@gmail.com" icon={faMessage}></CardContact>
-              <CardContact title="Celular" desc="(11) 99999-9999" icon={faPhone}></CardContact>
+              <CardContact title="Email" desc="joaogabrielc700@gmail.com" icon={faMessage}></CardContact>
+              <CardContact title="Celular" desc="(11) 97347-1291" icon={faPhone}></CardContact>
               <CardContact title="Localização" desc="São Paulo" icon={faLocation}></CardContact>
 
               <div className="flex flex-col space-y-4 bg-green-100 p-4 rounded-lg shadow-md border border-solid border-green-200 hover:bg-green-300 transition-colors duration-300 cursor-pointer hover:shadow-lg">

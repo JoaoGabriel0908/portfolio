@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedinIn, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import styles from "./CardGithub.module.css";
 
 export default function CardGithub({ title, desc }: { title: string, desc: string }) {
