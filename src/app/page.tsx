@@ -31,6 +31,18 @@ export default function Home() {
     resJson.then(res => setProjects(res.projects));
   })
 
+  const navigationGithub = () => {
+    window.open("https://github.com/JoaoGabriel0908", "_blank");
+  }
+
+  const navigationLinkedin = () => {
+    window.open("https://www.linkedin.com/in/jo%C3%A3o-gabriel0908/", "_blank");
+  }
+
+  const navigationInstagram = () => {
+    window.open("https://www.instagram.com/serene.ui/", "_blank");
+  }
+  
   return (
     <div className={poppinsNormal.className + " h-full"}>
       <section className="flex flex-col section-height w-full position-relative m-auto" style={{ paddingTop: '64px' }}>
@@ -44,17 +56,17 @@ export default function Home() {
             <div className="flex space-x-4">
               {/* <FontAwesomeIcon icon={faAdobe} /> */}
               <div className="cursor-pointer">
-                <FontAwesomeIcon icon={faGithub} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
+                <FontAwesomeIcon onClick={() => navigationGithub()} icon={faGithub} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
                 ></FontAwesomeIcon>
               </div>
 
               <div className="cursor-pointer">
-                <FontAwesomeIcon icon={faLinkedinIn} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
+                <FontAwesomeIcon onClick={() => navigationLinkedin()} icon={faLinkedinIn} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
                 ></FontAwesomeIcon>
               </div>
 
               <div className="cursor-pointer">
-                <FontAwesomeIcon icon={faInstagram} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
+                <FontAwesomeIcon onClick={() => navigationInstagram()} icon={faInstagram} className="fas fa-check p-2 rounded-full bg-white shadow-sm text-black hover:text-gray-600 hover:-translate-y-0.5 hover:transition-all duration-300" style={{ height: 24, width: 24 }}
                 ></FontAwesomeIcon>
               </div>
             </div>

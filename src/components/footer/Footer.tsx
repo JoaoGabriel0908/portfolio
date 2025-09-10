@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <p>© 2021 João Gabriel</p>
+      <p>© 2025 João Gabriel Costa Flor</p>
     </footer>
   )
 }
