@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import styles from "./CardExperience.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 const poppinsBold = Poppins({
     subsets: ['latin'],
@@ -8,7 +9,7 @@ const poppinsBold = Poppins({
     variable: '--font-poppins',
 });
 
-export default function CardExperience({ experiences, title, icon }: { experiences: { title?: string, desc?: string, period?: string }[], title?: string, icon: string | any }) {
+export default function CardExperience({ experiences, title, icon }: { experiences: { title?: string, desc?: string, period?: string }[], title?: string, icon: IconDefinition }) {
     return (
         <div className={styles.glass + " flex flex-col rounded-lg mb-auto p-5 shadow-md items-start cursor-pointer space-y-2 w-full"}>
             <div className="w-full flex flex-row items-center space-x-2 mb-5">
