@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faLocation, faMessage, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faBriefcase, faGraduationCap, faLocation, faMessage, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import Image from "next/image";
@@ -15,6 +15,7 @@ import CardProject from "@/components/card-project/CardProject";
 import CardGithub from "@/components/card-github/CardGithub";
 import CardContact from "@/components/card-contact/CardContact";
 import { Project } from "@/model/typeProject";
+import CardExperience from "@/components/card-experience/CardExperience";
 
 const poppinsNormal = Poppins({
   subsets: ['latin'],
@@ -42,7 +43,7 @@ export default function Home() {
   const navigationInstagram = () => {
     window.open("https://www.instagram.com/serene.ui/", "_blank");
   }
-  
+
   return (
     <div className={poppinsNormal.className + " h-full"}>
       <section className="flex flex-col section-height w-full position-relative m-auto" style={{ paddingTop: '64px' }}>
@@ -94,10 +95,13 @@ export default function Home() {
               Banco de dados (modelagem e a estruturação do banco) com linguagens MySQL e
               estruturação back-end usando PHP, Java e Kotlin.</p>
 
-            <button type="button" className="focus:outline-none 
+
+            <a href="assets/pdf/joao_gabriel_dev.pdf" target="_blank" download="joao_gabriel_dev.pdf">
+              <button type="button" className="focus:outline-none 
               text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 
                 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 
               dark:focus:ring-green-800" style={{ width: 200 }}>Baixar Currículo</button>
+            </a>
           </div>
 
           <div className="flex flex-col items-center justify-center w-full">
@@ -156,6 +160,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="flex flex-col section-height w-full position-relative justify-evenly m-auto" style={{ paddingTop: '64px' }} id="service">
+        <div className="flex text-black justify-center items-center w-full mb-5">
+          <span className="text-2xl font-semibold">Minha experiência Acadêmica e Profissional</span>
+        </div>
+
+        <div className="flex container justify-around text-black items-center w-full" style={{ gap: '16px' }}>
+          <CardExperience
+            title="Acadêmica"
+            icon={faGraduationCap}
+            experiences={[
+              { title: "Técnico em Desenvolvimento de Sistemas", desc: "SENAI Prof. Vicente Amato", period: "Jul/2021 - Dez/2023" },
+              { title: "Design UI e UX", desc: "SENAI Barueri", period: "Jul/2023 - Dez/2023" },
+              { title: "Bacharelado em Engenharia de Software", desc: "Estácio", period: "Fev/2025 - Presente" },
+            ]}
+          >
+          </CardExperience>
+          <CardExperience
+            title="Profissional"
+            icon={faBriefcase}
+            experiences={[
+              { title: "Estágio em Desevolvimento de Sistema", desc: "Sincro Integrando Soluções", period: "Jul/2022 - Dez/2023" },
+              { title: "Desenvolvedor Front-End (Freelancer)", desc: "Dev. Front Freelancer no projeto Easy Ofertas", period: "Jan/2024 - Jul/2024" },
+              { title: "Desenvolvedor Full-Stack", desc: "Sincro Integrando Soluções", period: "Dez/2023 - Presente" },
+            ]}
+          >
+          </CardExperience>
+        </div>
+      </section>
+
       <section className="flex flex-col section-height justify-evenly m-auto w-full position-relative" style={{ paddingTop: '64px' }} id="project">
         <div className="flex text-black justify-center items-center w-full mb-5">
           <span className="text-2xl font-semibold">Projetos</span>
@@ -167,7 +200,7 @@ export default function Home() {
               projects.map((project, index) => (
                 <CardProject
                   key={index}
-                  project={project}/>
+                  project={project} />
               ))
             }
           </div>
@@ -212,7 +245,8 @@ export default function Home() {
             </div>
           </div>
 
-          <form method="POST" action="https://formsubmit.co/joaogabrielc700@gmail.com" className="flex flex-col w-100 p-5 border-1 border-solid border-gray-300 rounded-lg shadow-md justify-start">
+          <form method="POST" action="https://formsubmit.co/joaogabrielc700@gmail.com"
+            className="flex flex-col w-100 p-5 border-1 border-solid border-gray-300 rounded-lg shadow-md justify-start">
 
             <span className="text-black font-semibold mb-2">Envie uma mensagem</span>
 
@@ -220,18 +254,18 @@ export default function Home() {
               <div className="flex justify-between space-x-2">
                 <div className="mb-5">
                   <label className="block mb-2 text-sm font-medium text-gray-900">Seu Nome: </label>
-                  <input type="text" id="email" name="nome" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@flowbite.com" required />
+                  <input type="text" id="email" name="nome" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Ex: João Gabriel" required />
                 </div>
 
                 <div className="mb-5">
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">Seu Email: </label>
-                  <input type="email" id="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@flowbite.com" required />
+                  <input type="email" id="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="joao@email.com" required />
                 </div>
               </div>
 
               <div className="w-full">
                 <label className="block mb-2 text-sm font-medium text-gray-900">Sua Mensagem</label>
-                <textarea id="message" name="mensagem" style={{height: '150px'}} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="Sua mensagem"></textarea>
+                <textarea id="message" name="mensagem" style={{ height: '150px' }} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 resize-none" placeholder="Sua mensagem"></textarea>
               </div>
             </div>
 
